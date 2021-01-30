@@ -9,8 +9,7 @@ body {
 .heading-primary {
   color: $color-white;
   text-transform: uppercase;
-  backface-visibility: hidden;
-  /* backface-visibility: hidden; used for remove shake while using animation */
+  backface-visibility: hidden;  /* backface-visibility: hidden; used for remove shake while using animation */
   margin-bottom: 6rem;
 
   &--main {
