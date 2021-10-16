@@ -88,18 +88,20 @@
 
     &--1 {
       background-image: linear-gradient(to right,
-              rgba($color-secondary-light, .85),
-              rgba($color-secondary-dark, .85));
+          rgba($color-secondary-light, .85),
+          rgba($color-secondary-dark, .85));
     }
+
     &--2 {
       background-image: linear-gradient(to right,
-              rgba($color-primary-light, .85),
-              rgba($color-primary-dark, .85));
+          rgba($color-primary-light, .85),
+          rgba($color-primary-dark, .85));
     }
+
     &--3 {
       background-image: linear-gradient(to right,
-              rgba($color-tertiary-light, .85),
-              rgba($color-tertiary-dark, .85));
+          rgba($color-tertiary-light, .85),
+          rgba($color-tertiary-dark, .85));
     }
   }
 
@@ -149,7 +151,49 @@
     font-weight: 100;
   }
 
+
+  @include respond(tab-port) {
+    height: auto;
+    border-radius: 3px;
+    background-color: $color-white;
+    box-shadow: $box-shadow-black;
+
+    &__side {
+      position: relative;
+      height: auto;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0deg);
+        clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+      }
+
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    /* Back side styling */
+    &__cta {
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+    }
+
+    &__detials {
+      padding: 1rem 3rem;
+    }
+  }
 }
-
-
-

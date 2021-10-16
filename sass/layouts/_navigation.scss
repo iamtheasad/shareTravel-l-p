@@ -40,6 +40,11 @@
     box-shadow: 0 1rem 3rem rgba($color-black, .1);
     text-align: center;
     cursor: pointer;
+
+    @include respond(phone) {
+      top: 4rem;
+      right: 4rem;
+    }
   }
 
   &__background {
@@ -52,6 +57,11 @@
     right: 6.5rem;
     z-index: 1000;
     transition: transform .8s cubic-bezier(0.85, 0, 0.15, 1);
+
+    @include respond(phone) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
   }
 
   &__nav {

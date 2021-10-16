@@ -3,13 +3,13 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: $color-grey-dark;
-  padding: 3rem;
 }
 
 .heading-primary {
   color: $color-white;
   text-transform: uppercase;
-  backface-visibility: hidden;  /* backface-visibility: hidden; used for remove shake while using animation */
+  backface-visibility: hidden;
+  /* backface-visibility: hidden; used for remove shake while using animation */
   margin-bottom: 6rem;
 
   &--main {
@@ -17,6 +17,11 @@ body {
     font-size: 6rem;
     letter-spacing: 3.5rem;
     font-weight: 400;
+
+    @include respond(phone) {
+      font-size: 5rem;
+      letter-spacing: 1rem;
+    }
 
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -28,6 +33,10 @@ body {
     font-size: 2rem;
     letter-spacing: 1.5rem;
     font-weight: 700;
+
+    @include respond(phone) {
+      letter-spacing: .5rem;
+    }
 
     animation-name: moveInRight;
     animation-duration: 1s;
@@ -44,6 +53,15 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   transition: all .2s;
+
+  @include respond(tab-port) {
+    font-size: 2.5rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
@@ -59,7 +77,9 @@ body {
 .paragraph {
   font-size: $default-font-size;
 
-  &:not(:last-child){
+  &:not(:last-child) {
     margin-bottom: 8rem;
-  };
+  }
+
+  ;
 }

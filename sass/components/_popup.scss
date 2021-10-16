@@ -25,11 +25,20 @@
 
       transform: translate(-50%, -50%) scale(.3);
       transition: all .5s .2s;
+
+      @include respond (tab-land) {}
    }
 
    &__left {
       width: 33.333333%;
       display: table-cell;
+      vertical-align: middle;
+
+      @include respond(tab-land) {
+         width: unset;
+         display: inline-table;
+         padding: 7rem 3rem 0 3rem;
+      }
    }
 
    &__right {
@@ -37,11 +46,21 @@
       display: table-cell;
       vertical-align: middle;
       padding: 3rem 5rem;
+
+      @include respond(tab-land) {
+         width: unset;
+         display: inline-table;
+      }
    }
 
    &__img {
       width: 100%;
       display: block;
+
+      @include respond(tab-land) {
+         width: 50%;
+         float: left;
+      }
    }
 
    &__text {
@@ -53,6 +72,10 @@
       column-rule: 1px solid $color-gray-light-2;
 
       hyphens: auto;
+
+      @include respond(phone) {
+         column-count: 1;
+      }
    }
 
    &:target {
