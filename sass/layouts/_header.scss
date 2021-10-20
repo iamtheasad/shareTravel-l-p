@@ -4,19 +4,17 @@
   background-position: top;
   background-size: cover;
   position: relative;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
 
-  @media(min-resolution: 192dpi) and (min-width: 37.5em),
-  (-webkit-min-divice-pixel-ration: 2) and (min-width: 37.5em),
-  (min-width: 125em) {
-    background-image: linear-gradient(to right, rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8)), url(../img/hero.jpg);
-  }
-
-  @supports(clip-path: polygon(0, 0)) or (-webkit-clip-path: polygon(0, 0)) {
+  @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
     height: 95vh;
+  }
+
+  @media only screen and(min-resolution: 192dpi) and (min-width: 37.5em),
+         only screen and(-webkit-min-divice-pixel-ration: 2) and (min-width: 37.5em),
+         only screen and(min-width: 125em) {
+    background-image: linear-gradient(to right, rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8)), url(../img/hero.jpg);
   }
 
   @include respond(phone) {

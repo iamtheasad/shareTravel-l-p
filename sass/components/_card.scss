@@ -54,8 +54,11 @@
     background-position: center;
     height: 23rem;
     background-blend-mode: screen;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
 
     &--1 {
       background-image: linear-gradient(to right, $color-secondary-light, $color-secondary-dark), url("../img/nat-5.jpg");
@@ -152,7 +155,9 @@
   }
 
 
-  @include respond(tab-port) {
+  // @include respond(tab-port) {
+  @media only screen and(max-width: 56.25em),
+  only screen and(hover: none) {
     height: auto;
     border-radius: 3px;
     background-color: $color-white;
